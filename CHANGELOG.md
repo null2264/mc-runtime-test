@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/null2264/mc-runtime-test/compare/3.0.0...3.0.1) (2025-04-03)
+
+
+### Reverts
+
+* "Bump version to 3.0.1" ([b36033d](https://github.com/null2264/mc-runtime-test/commit/b36033da945679c37bceb032c535aede04ea3419))
+
 ## [3.0.0](https://github.com/headlesshq/mc-runtime-test/compare/2.4.2...3.0.0) (2024-12-05)
 
 
