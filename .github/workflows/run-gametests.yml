@@ -60,7 +60,7 @@ jobs: # TODO: add cleanup job
         with:
           distro: temurin
           java: ${{ matrix.java }}
-          gradle-enable-setup: false
+          gradle-enable: false
 
       - name: Run game
         timeout-minutes: 3

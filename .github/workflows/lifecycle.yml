@@ -247,7 +247,7 @@ jobs:
         with:
           distro: temurin
           java: ${{ matrix.version.java }}
-          gradle-enable-setup: false
+          gradle-enable: false
 
       - name: Run game
         timeout-minutes: 3
