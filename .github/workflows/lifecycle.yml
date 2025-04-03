@@ -30,7 +30,7 @@ concurrency: # FIXME: prevent release commit cancellation
 jobs:
   release-please:
     name: Release Please
-    runs-on: ubuntu-2404
+    runs-on: ubuntu-24.04
     outputs:
       release_created: ${{ steps.release-please.outputs.release_created }}
       tag_name: ${{ steps.release-please.outputs.tag_name }}
@@ -49,7 +49,7 @@ jobs:
     if: github.event.action != 'closed'
     name: Construct matrices
     needs: release-please
-    runs-on: ubuntu-2404
+    runs-on: ubuntu-24.04
     outputs:
       build-matrix: ${{ steps.matrices.outputs.build-matrix }}
       run-matrix: ${{ steps.matrices.outputs.run-matrix }}
@@ -220,7 +220,7 @@ jobs:
     needs:
       - matrices
       - build
-    runs-on: ubuntu-2404
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix:
@@ -269,7 +269,7 @@ jobs:
     name: Release
     permissions:
       contents: write
-    runs-on: ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
@@ -297,7 +297,7 @@ jobs:
     needs:
       - run
       - release
-    runs-on: ubuntu-2404
+    runs-on: ubuntu-24.04
     steps:
       - name: Delete artifacts
         uses: geekyeggo/delete-artifact@f275313e70c08f6120db482d7a6b98377786765b # v5.1.0
