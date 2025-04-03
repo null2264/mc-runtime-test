@@ -4,7 +4,7 @@ name: Lifecycle
 "on":
   push:
     branches:
-      - main
+      - master
   pull_request:
     types:
       - closed
@@ -18,7 +18,7 @@ name: Lifecycle
         default: "all"
       ref:
         description: Git ref to checkout before build (i.e. my-feature-branch )
-        default: "main"
+        default: "master"
 
 concurrency: # FIXME: prevent release commit cancellation
   group: >
@@ -38,7 +38,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - if: github.event_name == 'push' # TODO: explicit on push to main
+      - if: github.event_name == 'push' # TODO: explicit on push to master
         id: release-please
         name: Run Release Please
         uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f # v4

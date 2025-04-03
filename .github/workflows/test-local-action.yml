@@ -6,7 +6,7 @@ name: Test local action
     inputs:
       ref:
         description: Git ref to checkout before build (i.e. my-feature-branch )
-        default: "main"
+        default: "master"
       mc:
         description: Minecraft version to run
         default: "1.20.4"
