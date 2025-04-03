@@ -23,10 +23,10 @@ jobs: # TODO: add cleanup job
   merge: # TODO: simplify away this job
     name: Merge
     needs: [build]
-    runs-on: blacksmith-2vcpu-ubuntu-2204
+    runs-on: ubuntu-2404
     steps:
       - name: Merge artifacts
-        uses: actions/upload-artifact/merge@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4
+        uses: actions/upload-artifact/merge@v4
         with:
           delete-merged: true
 
@@ -39,10 +39,10 @@ jobs: # TODO: add cleanup job
           - { mc: 1.20.4, type: lexforge, modloader: forge, regex: .*forge.*, java: 17 }
           - { mc: 1.20.4, type: neoforge, modloader: neoforge, regex: .*neoforge.*, java: 17 }
           - { mc: 1.20.4, type: fabric, modloader: fabric, regex: .*fabric.*, java: 17 }
-    runs-on: blacksmith-2vcpu-ubuntu-2204
+    runs-on: ubuntu-2404
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16 # v4
+        uses: actions/download-artifact@v4
 
       - name: Stage artifacts
         run: |
@@ -50,11 +50,12 @@ jobs: # TODO: add cleanup job
           cp merged-artifacts/clientgametest-${{ matrix.mc }}-*-${{ matrix.type }}.jar run/mods
           cp merged-artifacts/mc-runtime-test-${{ matrix.mc }}-*-${{ matrix.type }}-release.jar run/mods
 
-      - name: Setup temurin-${{ matrix.java }}
-        uses: useblacksmith/setup-java@ffdcc086410416d16bc6eebdf2412fa3b37823d9 # v5
+      - name: Setup Java temurin-${{ matrix.version.java }}
+        uses: null2264/actions/gradle-java-setup@363cb9cf3d66bd9c72ed6860142c6b2c121d7e94
         with:
-          java-version: ${{ matrix.java }}
-          distribution: temurin
+          distro: temurin
+          java-version: ${{ matrix.version.java }}
+          gradle-enable-setup: false
 
       - name: Run game
         timeout-minutes: 3

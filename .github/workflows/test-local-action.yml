@@ -41,19 +41,20 @@ env:
 jobs:
   run:
     name: Run test
-    runs-on: blacksmith-2vcpu-ubuntu-2204
+    runs-on: ubuntu-2404
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
           ref: ${{ github.event.inputs.ref }}
 
-      - name: Setup temurin-${{ env.java_version }}
-        uses: useblacksmith/setup-java@ffdcc086410416d16bc6eebdf2412fa3b37823d9 # v5
+      - name: Setup Java temurin-${{ matrix.version.java }}
+        uses: null2264/actions/gradle-java-setup@363cb9cf3d66bd9c72ed6860142c6b2c121d7e94
         with:
-          java-version: ${{ env.java_version }}
-          distribution: temurin
+          distro: temurin
+          java-version: ${{ matrix.version.java }}
+          gradle-enable-setup: false
 
       - name: Run game
         timeout-minutes: 3
