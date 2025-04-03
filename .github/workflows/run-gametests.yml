@@ -55,11 +55,11 @@ jobs: # TODO: add cleanup job
           cp merged-artifacts/clientgametest-${{ matrix.mc }}-*-${{ matrix.type }}.jar run/mods
           cp merged-artifacts/mc-runtime-test-${{ matrix.mc }}-*-${{ matrix.type }}-release.jar run/mods
 
-      - name: Setup Java temurin-${{ matrix.version.java }}
+      - name: Setup Java temurin-${{ matrix.java }}
         uses: null2264/actions/gradle-java-setup@363cb9cf3d66bd9c72ed6860142c6b2c121d7e94
         with:
           distro: temurin
-          java: ${{ matrix.version.java }}
+          java: ${{ matrix.java }}
           gradle-enable-setup: false
 
       - name: Run game
