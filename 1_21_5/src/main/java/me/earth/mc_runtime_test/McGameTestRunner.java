@@ -1,6 +1,7 @@
 package me.earth.mc_runtime_test;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -40,7 +41,7 @@ public class McGameTestRunner {
             GameTestBatchFactory.TestDecorator testDecorator = GameTestBatchFactory.DIRECT;
             Collection<Holder.Reference<GameTestInstance>> testFunctions =
                 registry.listElements().filter((reference) -> !reference.value().manualOnly()).toList();
-            LOGGER.info("TestFunctions: " + testFunctions);
+            LOGGER.info("TestFunctions: {}", testFunctions);
             if (testFunctions.size() < McRuntimeTest.MIN_GAME_TESTS_TO_FIND) {
                 LOGGER.error("Failed to find the minimum amount of gametests, expected " + McRuntimeTest.MIN_GAME_TESTS_TO_FIND + ", but found " + testFunctions.size());
                 throw new IllegalStateException("Failed to find the minimum amount of gametests, expected " + McRuntimeTest.MIN_GAME_TESTS_TO_FIND + ", but found " + testFunctions.size());
@@ -49,7 +50,9 @@ public class McGameTestRunner {
             }
 
             Collection<GameTestBatch> batches = GameTestBatchFactory.divideIntoBatches(testFunctions, testDecorator, level);
-            GameTestRunner gameTestRunner = GameTestRunner.Builder.fromBatches(batches, level).build();
+            BlockPos blockPos = new BlockPos(level.random.nextIntBetweenInclusive(-14999992, 14999992), -59, level.random.nextIntBetweenInclusive(-14999992, 14999992));
+            level.setDefaultSpawnPos(blockPos, 0.0F);
+            GameTestRunner gameTestRunner = GameTestRunner.Builder.fromBatches(batches, level).newStructureSpawner(new StructureGridSpawner(blockPos, 8, false)).build();
             gameTestRunner.start();
 
             MultipleTestTracker multipleTestTracker = new MultipleTestTracker(gameTestRunner.getTestInfos());

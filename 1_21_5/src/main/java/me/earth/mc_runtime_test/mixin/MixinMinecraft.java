@@ -89,7 +89,7 @@ public abstract class MixinMinecraft {
             if (screen == null) {
                 if (!level.getChunk(SectionPos.blockToSectionCoord(player.getBlockX()), SectionPos.blockToSectionCoord(player.getBlockZ())).isEmpty()) {
                     if (player.tickCount < 100) {
-                        LOGGER.info("Waiting " + (100 - player.tickCount) + " ticks before testing...");
+                        LOGGER.info("Waiting {} ticks before testing...", 100 - player.tickCount);
                     } else if (mcRuntimeTest$testTracker == null) {
                         if (McRuntimeTest.RUN_GAME_TESTS) {
                             LOGGER.info("Running game tests...");
@@ -111,14 +111,13 @@ public abstract class MixinMinecraft {
 
                         mcRuntime$stop();
                     } else {
-                        LOGGER.info("Waiting for GameTest: " + mcRuntimeTest$testTracker.getProgressBar());
+                        LOGGER.info("Waiting for GameTest: {}", mcRuntimeTest$testTracker.getProgressBar());
                     }
                 } else {
-                    LOGGER.info("Players chunk not yet loaded, " + player + ": cores: " + Runtime.getRuntime().availableProcessors()
-                            + ", server running: " + (singleplayerServer == null ? "null" : singleplayerServer.isRunning()));
+                    LOGGER.info("Players chunk not yet loaded, {}: cores: {}, server running: {}", singleplayerServer == null ? "null" : singleplayerServer.isRunning(), player, Runtime.getRuntime().availableProcessors());
                 }
             } else {
-                LOGGER.info("Screen not yet null: " + screen);
+                LOGGER.info("Screen not yet null: {}", screen);
                 if (McRuntimeTest.CLOSE_ANY_SCREEN || McRuntimeTest.CLOSE_CREATE_WORLD_SCREEN && screen instanceof CreateWorldScreen) {
                     LOGGER.info("Closing screen");
                     setScreen(null);
