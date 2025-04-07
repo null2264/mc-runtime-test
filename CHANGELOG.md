@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.1](https://github.com/null2264/mc-runtime-test/compare/3.1.0...3.1.1) (2025-04-07)
+
+
+### Bug Fixes
+
+* Missing "forgetFailedTests" call ([1a37ff6](https://github.com/null2264/mc-runtime-test/commit/1a37ff66ac8b9878125e98b9d1425f79e012837c))
+
 ## [3.1.0](https://github.com/null2264/mc-runtime-test/compare/3.0.2...3.1.0) (2025-04-04)
 
 
