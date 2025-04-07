@@ -49,6 +49,8 @@ public class McGameTestRunner {
                 return null;
             }
 
+            FailedTestTracker.forgetFailedTests();
+
             Collection<GameTestBatch> batches = GameTestBatchFactory.divideIntoBatches(testFunctions, testDecorator, level);
             BlockPos blockPos = new BlockPos(level.random.nextIntBetweenInclusive(-14999992, 14999992), -59, level.random.nextIntBetweenInclusive(-14999992, 14999992));
             level.setDefaultSpawnPos(blockPos, 0.0F);
