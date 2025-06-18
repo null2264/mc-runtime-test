@@ -61,11 +61,12 @@ jobs:
           steps.cache.outputs.cache-hit != 'true'
           && !inputs.release
         name: Gradle build
-        run: >
-          ./gradlew build --stacktrace
-          -Pminecraft_version=${{ inputs.mc }}
-          -Plexforge_version=${{ inputs.lex }}
-          -Pneoforge_version=${{ inputs.neo }}
+        run: |
+          ARGS="-Pminecraft_version=${{ inputs.mc }}"
+          # Because lex is slow
+          [ "${{ inputs.lex }}" = "" ] || ARGS="$ARGS -Plexforge_version=${{ inputs.lex }}"
+          [ "${{ inputs.neo }}" = "" ] || ARGS="$ARGS -Pneoforge_version=${{ inputs.neo }}"
+          ./gradlew build --stacktrace $ARGS
         working-directory: ${{ inputs.dir }}
 
       - if: inputs.release
