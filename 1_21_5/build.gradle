@@ -17,7 +17,9 @@ base {
 sourceSets {
     fabric
     neoforge
-    lexforge
+    if (project.lexforge_version != "-1") {
+        lexforge
+    }
 }
 
 repositories {
@@ -94,19 +96,21 @@ unimined.minecraft(sourceSets.neoforge) {
     defaultRemapJar = true
 }
 
-unimined.minecraft(sourceSets.lexforge) {
-    combineWith(sourceSets.main)
+if (project.lexforge_version != "-1") {
+    unimined.minecraft(sourceSets.lexforge) {
+        combineWith(sourceSets.main)
 
-    minecraftForge {
-        loader project.lexforge_version
-        mixinConfig 'mc_runtime_test.mixins.json'
+        minecraftForge {
+            loader project.lexforge_version
+            mixinConfig 'mc_runtime_test.mixins.json'
+        }
+
+        minecraftRemapper.config {
+            ignoreConflicts(true)
+        }
+
+        defaultRemapJar = true
     }
-
-    minecraftRemapper.config {
-        ignoreConflicts(true)
-    }
-
-    defaultRemapJar = true
 }
 
 configurations {
@@ -118,6 +122,7 @@ configurations {
 
 for (String platform_capitalized : ['Fabric', 'Neoforge', 'Lexforge']) {
     def platform = platform_capitalized.toLowerCase()
+    if (platform == "lexforge" && project.lexforge_version == "-1") continue
     def remapJarTask = tasks.named("remap${platform_capitalized}Jar", AbstractArchiveTask).get()
     def shadowTask = tasks.register("${platform}ShadowJar", ShadowJar) {
         dependsOn(remapJarTask)
@@ -166,25 +171,29 @@ processNeoforgeResources {
     }
 }
 
-processLexforgeResources {
-    inputs.property "version", project.version
+if (project.lexforge_version != "-1") {
+    processLexforgeResources {
+        inputs.property "version", project.version
 
-    filesMatching("META-INF/mods.toml") {
-        expand "version": project.version
+        filesMatching("META-INF/mods.toml") {
+            expand "version": project.version
+        }
     }
 }
 
 // Forge Runs seem to have problems running from the build/classes folder
 // So instead we just run from the built jar
 afterEvaluate {
-    lexforgeRunClient {
-        dependsOn(lexforgeJar)
-        classpath = classpath.filter {
-            !it.toString().contains('mc-runtime-test/build/classes/java/'.replace('/', File.separator))
-                    && !it.toString().contains('mc-runtime-test/build/resources/'.replace('/', File.separator))
-        }
+    if (project.lexforge_version != "-1") {
+        lexforgeRunClient {
+            dependsOn(lexforgeJar)
+            classpath = classpath.filter {
+                !it.toString().contains('mc-runtime-test/build/classes/java/'.replace('/', File.separator))
+                        && !it.toString().contains('mc-runtime-test/build/resources/'.replace('/', File.separator))
+            }
 
-        classpath += files("${projectDir}/build/libs/mc-runtime-test-${version}-lexforge-dev.jar".replace('/', File.separator))
+            classpath += files("${projectDir}/build/libs/mc-runtime-test-${version}-lexforge-dev.jar".replace('/', File.separator))
+        }
     }
 
     neoforgeRunClient {
@@ -222,6 +231,7 @@ afterEvaluate {
                 ((MavenPublication) it).version "${version}"
                 from components.java
                 for (String platform: ['Fabric', 'Lexforge', 'Neoforge']) {
+                    if (platform == "lexforge" && project.lexforge_version == "-1") continue
                     String platform_lower = platform.toLowerCase()
                     artifact tasks.named("${platform_lower}Jar").get()
                     artifact tasks.named("remap${platform}Jar").get()

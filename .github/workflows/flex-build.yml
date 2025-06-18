@@ -64,8 +64,8 @@ jobs:
         run: |
           ARGS="-Pminecraft_version=${{ inputs.mc }}"
           # Because lex is slow
-          [ "${{ inputs.lex }}" = "" ] || ARGS="$ARGS -Plexforge_version=${{ inputs.lex }}"
-          [ "${{ inputs.neo }}" = "" ] || ARGS="$ARGS -Pneoforge_version=${{ inputs.neo }}"
+          [ "${{ inputs.lex }}" = "" ] && ARGS="$ARGS -Plexforge_version=-1" || ARGS="$ARGS -Plexforge_version=${{ inputs.lex }}"
+          [ "${{ inputs.neo }}" = "" ] && ARGS="$ARGS -Pneoforge_version=-1" || ARGS="$ARGS -Pneoforge_version=${{ inputs.neo }}"
           ./gradlew build --stacktrace $ARGS
         working-directory: ${{ inputs.dir }}
 
