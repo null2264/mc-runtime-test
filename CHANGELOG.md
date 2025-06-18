@@ -1,5 +1,14 @@
 # Changelog
 
+## [4.0.1](https://github.com/null2264/mc-runtime-test/compare/4.0.0...4.0.1) (2025-06-18)
+
+
+### Bug Fixes
+
+* 1.21.6 breaking changes ([bdff8a9](https://github.com/null2264/mc-runtime-test/commit/bdff8a9e72563b73f261b72bbc6d3b89503a73c1))
+* Fix build ([dffd5de](https://github.com/null2264/mc-runtime-test/commit/dffd5dee7420248ca684b95ae01bfe81786a0f3a))
+* Lex is holding us back ([cd2f4d1](https://github.com/null2264/mc-runtime-test/commit/cd2f4d1d12cff70749b02df94368e39a84d411af))
+
 ## [4.0.0](https://github.com/null2264/mc-runtime-test/compare/3.1.1...4.0.0) (2025-06-18)
 
 
