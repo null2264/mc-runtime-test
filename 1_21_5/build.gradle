@@ -231,8 +231,8 @@ afterEvaluate {
                 ((MavenPublication) it).version "${version}"
                 from components.java
                 for (String platform: ['Fabric', 'Lexforge', 'Neoforge']) {
-                    if (platform == "lexforge" && project.lexforge_version == "-1") continue
                     String platform_lower = platform.toLowerCase()
+                    if (platform_lower == "lexforge" && project.lexforge_version == "-1") continue
                     artifact tasks.named("${platform_lower}Jar").get()
                     artifact tasks.named("remap${platform}Jar").get()
                     artifact tasks.named("${platform_lower}ShadowJar").get()
