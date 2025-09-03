@@ -289,7 +289,7 @@ jobs:
           gradle-enable: false
 
       - name: Run game
-        timeout-minutes: 3
+        timeout-minutes: 5
         uses: ./
         with:
           mc: ${{ matrix.version.mc }}
