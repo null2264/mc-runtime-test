@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.0](https://github.com/null2264/mc-runtime-test/compare/4.1.0...4.2.0) (2025-09-03)
+
+
+### Features
+
+* 1.21.8 support and LexForge support for 1.21.6 and 1.21.7 ([f7df2ba](https://github.com/null2264/mc-runtime-test/commit/f7df2ba29ff1e83519ee13df9d8af3445170d4fb))
+
 ## [4.1.0](https://github.com/null2264/mc-runtime-test/compare/4.0.1...4.1.0) (2025-07-01)
 
 
