@@ -50,7 +50,7 @@ public abstract class MixinMinecraft {
     public abstract void setScreen(@Nullable Screen screen);
 
     @Shadow
-    public abstract void disconnect();
+    public abstract void disconnectWithSavingScreen();
 
     @Inject(method = "setScreen", at = @At("HEAD"))
     private void setScreenHook(Screen screen, CallbackInfo ci) {
@@ -133,7 +133,7 @@ public abstract class MixinMinecraft {
         IntegratedServer server = singleplayerServer;
         if (server != null) {
             server.halt(true);
-            disconnect();
+            disconnectWithSavingScreen();
         }
 
         running = false;
