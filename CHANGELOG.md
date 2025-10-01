@@ -1,5 +1,26 @@
 # Changelog
 
+## [5.0.0](https://github.com/null2264/mc-runtime-test/compare/4.3.0...5.0.0) (2025-10-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* Always use xvfb
+
+### Bug Fixes
+
+* **action:** Change cache keys to prevent fallback to cache ([71a06f1](https://github.com/null2264/mc-runtime-test/commit/71a06f153caee4f27033096f94f90c29b30fff48))
+
+
+### Reverts
+
+* "refactor: Merge 1.21.6 with 1.21.5" ([85995d1](https://github.com/null2264/mc-runtime-test/commit/85995d14122679c3d0539007eb0d99815fd3bf25))
+
+
+### Code Refactoring
+
+* Always use xvfb ([45c76e5](https://github.com/null2264/mc-runtime-test/commit/45c76e5d3cd3b7dce8e93273b99eb47d9663e810))
+
 ## [4.3.0](https://github.com/null2264/mc-runtime-test/compare/4.2.0...4.3.0) (2025-10-01)
 
 
