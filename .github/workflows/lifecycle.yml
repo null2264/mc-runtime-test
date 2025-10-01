@@ -270,7 +270,6 @@ jobs:
       fail-fast: false
       matrix:
         ${{ insert }}: ${{ fromJSON(needs.matrices.outputs.run-matrix) }}
-        xvfb: [true, false]
     steps:
       - name: Checkout # TODO: simplify away this step, currently needed for `uses: ./`
         uses: actions/checkout@v4
@@ -303,8 +302,7 @@ jobs:
           modloader: ${{ matrix.version.modloader }}
           regex: ${{ matrix.version.regex }}
           java: ${{ matrix.version.java }}
-          xvfb: ${{ matrix.xvfb }}
-          headlessmc-command: ${{ !matrix.xvfb && '-lwjgl' || '' }} --retries 3 --jvm -Djava.awt.headless=true
+          headlessmc-command: --retries 3 --jvm -Djava.awt.headless=true
 
   release:
     if: needs.release-please.outputs.release_created == 'true'

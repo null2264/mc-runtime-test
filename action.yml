@@ -24,9 +24,6 @@ inputs:
   mc-runtime-test:
     description: MC-Runtime-Test jar to download (none, lexforge, neoforge, fabric)
     required: true
-  xvfb:
-    description: Runs the game with Xvfb (if false, add the -lwjgl argument)
-    default: "true"
   headlessmc-command:
     description: Command-line arguments for HeadlessMC
     default: '--jvm "-Djava.awt.headless=true"'
@@ -121,14 +118,8 @@ runs:
         EOF
       shell: bash
 
-    - if: inputs.xvfb == 'true'
-      name: Run game with xvfb
+    - name: Run game
       run: | # TODO: install xrandr conditionally per #22
         sudo DEBIAN_FRONTEND=noninteractive apt-get install -y x11-xserver-utils
         xvfb-run java -Dhmc.check.xvfb=true -jar headlessmc-launcher-${{ inputs.hmc-version }}.jar --command launch ${{ inputs.regex }} -regex ${{ inputs.headlessmc-command }}
-      shell: bash
-
-    - if: inputs.xvfb != 'true'
-      name: Run game
-      run: java -jar headlessmc-launcher-${{ inputs.hmc-version }}.jar --command launch ${{ inputs.regex }} -regex ${{ inputs.headlessmc-command }}
       shell: bash

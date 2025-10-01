@@ -22,9 +22,6 @@ name: Test local action
       java:
         description: Java version to use
         default: "17"
-      xvfb:
-        description: Runs the game with Xvfb (true/false)
-        default: true
       fabric-api:
         description: Fabric API version to download (e.g. 0.97.0) or none
         default: "0.97.0"
@@ -65,8 +62,7 @@ jobs:
           regex: ${{ github.event.inputs.regex }}
           mc-runtime-test: ${{ github.event.inputs.mc-runtime-test }}
           java: ${{ github.event.inputs.java }}
-          xvfb: ${{ github.event.inputs.xvfb }}
-          headlessmc-command: ${{ !inputs.xvfb && '-lwjgl' || '' }} --retries 3 --jvm -Djava.awt.headless=true
+          headlessmc-command: --retries 3 --jvm -Djava.awt.headless=true
           fabric-api: ${{ github.event.inputs.fabric-api }}
           fabric-gametest-api: ${{ github.event.inputs.fabric-gametest-api }}
           hmc-version: ${{ github.event.inputs.hmc-version }}
