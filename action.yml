@@ -1,5 +1,5 @@
-name: MC-Runtime-Test
-description: Runs the MC client inside your CI
+name: 'Test MC Runtime'
+description: Run an MC client inside a CI to test your prod-ready mod(s)
 author: null2264
 branding:
   icon: play

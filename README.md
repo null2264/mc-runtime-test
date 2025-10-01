@@ -1,7 +1,7 @@
-<h1 align="center" style="font-weight: normal;"><b>MC-Runtime-Test</b></h1>
-<p align="center">Run the Minecraft client inside your CI/CD pipeline.</p>
+<h1 align="center" style="font-weight: normal;"><b>Test MC Runtime</b></h1>
+<p align="center">Run an Minecraft client inside your CI/CD pipeline.</p>
 <p align="center">
-MC-Runtime-Test | <a href="https://github.com/3arthqu4ke/headlessmc">HMC</a> | <a href="https://github.com/3arthqu4ke/hmc-specifics">HMC-Specifics</a> | <a href="https://github.com/3arthqu4ke/hmc-optimizations">HMC-Optimizations</a>
+Test MC Runtime | <a href="https://github.com/3arthqu4ke/headlessmc">HMC</a> | <a href="https://github.com/3arthqu4ke/hmc-specifics">HMC-Specifics</a> | <a href="https://github.com/3arthqu4ke/hmc-optimizations">HMC-Optimizations</a>
 </p>
 
 <div align="center">
