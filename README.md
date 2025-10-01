@@ -16,11 +16,20 @@ MC-Runtime-Test | <a href="https://github.com/3arthqu4ke/headlessmc">HMC</a> | <
 > [!NOTE]  
 > This is **not an official Minecraft product**. It is **not approved by or associated with Mojang or Microsoft**.
 
+> [!WARNING]  
+> This is a fork of MC-Runtime-Test by 3arthqu4ke.
+
 ---
 
 MC-Runtime-Test enables you to run the Minecraft client within your CI/CD pipelines, simplifying the testing of runtime bugs in Minecraft mods.
 Manual testing for different Minecraft versions and modloaders can be time-consuming, especially when bugs occur only in runtime environments launched via a Minecraft launcher.
 This project helps streamline that process by automating the client launch and basic test execution.
+
+## Fork Features
+- Remove LWJGL entirely
+- Support newer version of Minecraft⚠️
+
+*⚠️ As of the time of writing, the original project only support 1.21.5 due to LWJGL support.*
 
 ## Features
 - Utilizes [HeadlessMC](https://github.com/3arthqu4ke/headlessmc) for headless Minecraft launches.
@@ -34,7 +43,7 @@ This project helps streamline that process by automating the client launch and b
 ### Supported Minecraft Versions and Modloaders
 | Version         | Forge           | Fabric          | NeoForge        |
 |-----------------|----------------|----------------|----------------|
-| 1.21 - 1.21.4   | ✔️              | ✔️              | ✔️              |
+| 1.21 - 1.21.9   | ✔️              | ✔️              | ✔️              |
 | 1.20.2 - 1.20.6 | ✔️              | ✔️              | ✔️              |
 | 1.20.1          | ✔️              | ✔️              | ⚠️              |
 | 1.19 - 1.19.4   | ✔️              | ✔️              | —              |

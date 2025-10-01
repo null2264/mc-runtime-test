@@ -1,6 +1,6 @@
 name: MC-Runtime-Test
 description: Runs the MC client inside your CI
-author: HeadlessHQ
+author: null2264
 branding:
   icon: play
   color: green
