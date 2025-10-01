@@ -1,5 +1,17 @@
 # Changelog
 
+## [4.3.0](https://github.com/null2264/mc-runtime-test/compare/4.2.0...4.3.0) (2025-10-01)
+
+
+### Features
+
+* 1.21.9 ([bf61613](https://github.com/null2264/mc-runtime-test/commit/bf61613252f0556296391a99e62da796d65426d1))
+
+
+### Bug Fixes
+
+* Fix 1.21.9 support ([e871ae2](https://github.com/null2264/mc-runtime-test/commit/e871ae2c958704acb56252d68f274c34bb0c2cde))
+
 ## [4.2.0](https://github.com/null2264/mc-runtime-test/compare/4.1.0...4.2.0) (2025-09-03)
 
 
