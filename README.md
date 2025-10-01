@@ -1,15 +1,11 @@
 <h1 align="center" style="font-weight: normal;"><b>Test MC Runtime</b></h1>
 <p align="center">Run an Minecraft client inside your CI/CD pipeline.</p>
-<p align="center">
-Test MC Runtime | <a href="https://github.com/3arthqu4ke/headlessmc">HMC</a> | <a href="https://github.com/3arthqu4ke/hmc-specifics">HMC-Specifics</a> | <a href="https://github.com/3arthqu4ke/hmc-optimizations">HMC-Optimizations</a>
-</p>
 
 <div align="center">
 
-[![CodeFactor](https://www.codefactor.io/repository/github/headlesshq/mc-runtime-test/badge/main)](https://www.codefactor.io/repository/github/headlesshq/mc-runtime-test/overview/main)
-[![GitHub All Releases](https://img.shields.io/github/downloads/headlesshq/mc-runtime-test/total.svg)](https://github.com/headlesshq/mc-runtime-test/releases)
-![GitHub License](https://img.shields.io/github/license/headlesshq/mc-runtime-test)
-![GitHub Last Commit](https://img.shields.io/github/last-commit/headlesshq/mc-runtime-test)
+[![GitHub All Releases](https://img.shields.io/github/downloads/null2264/mc-runtime-test/total.svg)](https://github.com/null2264/mc-runtime-test/releases)
+![GitHub License](https://img.shields.io/github/license/null2264/mc-runtime-test)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/null2264/mc-runtime-test)
 
 </div>
 
@@ -29,7 +25,7 @@ This project helps streamline that process by automating the client launch and b
 - Remove LWJGL entirely
 - Support newer version of Minecraft⚠️
 
-*⚠️ As of the time of writing, the original project only support 1.21.5 due to LWJGL support.*
+*⚠️ As of the time of writing, the original project only support 1.21.5 due to an issue with the LWJGL support.*
 
 ## Features
 - Utilizes [HeadlessMC](https://github.com/3arthqu4ke/headlessmc) for headless Minecraft launches.
@@ -90,7 +86,7 @@ jobs:
           cp build/libs/<your-mod>.jar run/mods
 
       - name: Run MC test client
-        uses: headlesshq/mc-runtime-test@5.0.0 <!-- x-release-please-version -->
+        uses: null2264/mc-runtime-test@5.0.0 <!-- x-release-please-version -->
         with:
           mc: 1.21.4
           modloader: fabric
@@ -116,7 +112,6 @@ The following table summarizes the available inputs for customization:
 | `java`                | Java version to use                    | Yes      | `8`, `16`, `17`, `21`                    |
 | `mc-runtime-test`     | MC-Runtime-Test jar to download        | Yes      | `none`, `lexforge`, `neoforge`, `fabric` |
 | `dummy-assets`        | Use dummy assets during testing        |          | `true`, `false`                          |
-| `xvfb`                | Runs the game with Xvfb                |          | `true`, `false`                          |
 | `headlessmc-command`  | Command-line arguments for HeadlessMC  |          | `--jvm "-Djava.awt.headless=true"`       |
 | `fabric-api`          | Fabric API version to download or none |          | `0.97.0`, `none`                         |
 | `fabric-gametest-api` | Fabric GameTest API version or none    |          | `1.3.5+85d85a934f`, `none`               |
