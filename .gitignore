@@ -41,4 +41,7 @@ replay_*.log
 /libs/
 /logs/
 /.architectury-transformer/
-/.venv/
+
+# python
+.python-version
+.venv/

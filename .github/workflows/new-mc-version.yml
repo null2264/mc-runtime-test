@@ -24,7 +24,7 @@ jobs:
         run: pip install -r new-versions/requirements.txt
 
       - name: Run Python script
-        run: python new-versions/check-for-new-mc-versions.py
+        run: python new-versions/main.py
 
       - name: Check for changes
         id: git-check

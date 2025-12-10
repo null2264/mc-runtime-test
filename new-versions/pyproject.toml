@@ -1,0 +1,7 @@
+[project]
+name = "new-versions"
+version = "0.1.0"
+description = "Fetch and check MC new versions"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
