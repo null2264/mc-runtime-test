@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.1](https://github.com/null2264/mc-runtime-test/compare/5.2.0...5.2.1) (2025-12-10)
+
+
+### Bug Fixes
+
+* Fix 1.21.10 and 1.21.11 support ([4340e9b](https://github.com/null2264/mc-runtime-test/commit/4340e9b22886d97fa703021b3a9b6396aa6c7b37))
+
 ## [5.2.0](https://github.com/null2264/mc-runtime-test/compare/5.1.0...5.2.0) (2025-12-10)
 
 
