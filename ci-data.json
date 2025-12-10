@@ -7,7 +7,7 @@
 		{
 			"dir": "1_21_9",
 			"mc": "1.21.11",
-			"lex": "61.0.0",
+			"lex": "",
 			"neo": "0-beta",
 			"java": "21"
 		},
@@ -183,13 +183,6 @@
 		}
 	],
 	"run_data": [
-		{
-			"mc": "1.21.11",
-			"type": "lexforge",
-			"modloader": "forge",
-			"regex": ".*forge.*",
-			"java": "21"
-		},
 		{
 			"mc": "1.21.11",
 			"type": "neoforge",
