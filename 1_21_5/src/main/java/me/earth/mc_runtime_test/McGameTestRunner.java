@@ -30,7 +30,7 @@ public class McGameTestRunner {
      * We just exit with an error code if a test fails.
      *
      * @param playerUUID the uuid of the player.
-     * @param server the server to run the tests on.
+     * @param server     the server to run the tests on.
      */
     public static @Nullable MultipleTestTracker runGameTests(UUID playerUUID, MinecraftServer server) throws ExecutionException, InterruptedException, TimeoutException {
         return server.submit(() -> {
