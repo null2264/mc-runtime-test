@@ -201,7 +201,7 @@ jobs:
         timeout-minutes: 10
         uses: ./
         with:
-          cache-mc: "blacksmith"
+          cache-mc: "github"
           mc: ${{ matrix.version.mc }}
           mc-runtime-test: none
           modloader: ${{ matrix.version.modloader }}
