@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.2.0](https://github.com/null2264/mc-runtime-test/compare/5.1.0...5.2.0) (2025-12-10)
+
+
+### Features
+
+* 1.21.11 ([#17](https://github.com/null2264/mc-runtime-test/issues/17)) ([619f876](https://github.com/null2264/mc-runtime-test/commit/619f87669bdbcd99675b151e6906723dd4fd2526))
+
+
+### Bug Fixes
+
+* Handle lex when they holding us back ([dc8ac6a](https://github.com/null2264/mc-runtime-test/commit/dc8ac6a9aedf3a7e4b440b8ca822c7529189a6c4))
+
 ## [5.1.0](https://github.com/null2264/mc-runtime-test/compare/5.0.0...5.1.0) (2025-10-08)
 
 
