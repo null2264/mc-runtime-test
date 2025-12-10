@@ -5,10 +5,17 @@
 			"java": "8"
 		},
 		{
-			"dir": "1_21_10",
+			"dir": "1_21_9",
 			"mc": "1.21.10",
 			"lex": "60.0.0",
 			"neo": "50-beta",
+			"java": "21"
+		},
+		{
+			"dir": "1_21_9",
+			"mc": "1.21.9",
+			"lex": "",
+			"neo": "1-beta",
 			"java": "21"
 		},
 		{
@@ -185,6 +192,20 @@
 		},
 		{
 			"mc": "1.21.10",
+			"type": "fabric",
+			"modloader": "fabric",
+			"regex": ".*fabric.*",
+			"java": "21"
+		},
+		{
+			"mc": "1.21.9",
+			"type": "neoforge",
+			"modloader": "neoforge",
+			"regex": ".*neoforge.*",
+			"java": "21"
+		},
+		{
+			"mc": "1.21.9",
 			"type": "fabric",
 			"modloader": "fabric",
 			"regex": ".*fabric.*",
