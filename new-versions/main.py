@@ -74,6 +74,8 @@ def update_ci_data(curr_dir: str, latest: str, lex: str):
     })
 
     for ml_type, modloader in { "fabric": "fabric", "neoforge": "neoforge", "lexforge": "forge" }.items():
+        if ml_type == "lexforge" and not lex:
+            continue
         run_data.insert(0, {
             "mc": latest,
             "type": ml_type,
@@ -135,7 +137,7 @@ def get_lexforge_version(mc_version: str) -> str:
             if require['equals'] == mc_version and require['uid'] == 'net.minecraft':
                 return version['version']
 
-    raise Exception(f"Failed to find Lexforge version for {mc_version}")
+    return ""
 
 
 def check_latest_mc_version():
