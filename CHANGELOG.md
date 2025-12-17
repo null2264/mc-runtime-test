@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.3](https://github.com/null2264/mc-runtime-test/compare/5.2.2...5.2.3) (2025-12-17)
+
+
+### Bug Fixes
+
+* Use patched version of unimined to fix 1.21.11 support ([0fa6a01](https://github.com/null2264/mc-runtime-test/commit/0fa6a0128dae03bef8e33e80d2b4248abf6ee26d))
+
 ## [5.2.2](https://github.com/null2264/mc-runtime-test/compare/5.2.1...5.2.2) (2025-12-10)
 
 
