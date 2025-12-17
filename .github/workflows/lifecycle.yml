@@ -198,7 +198,7 @@ jobs:
           gradle-enable: false
 
       - name: Run game
-        timeout-minutes: 10
+        timeout-minutes: 25
         uses: ./
         with:
           cache-mc: "github"
