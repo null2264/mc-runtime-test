@@ -4,7 +4,7 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'java'
     id 'maven-publish'
-    id 'xyz.wagyourtail.unimined' version '1.3.10-SNAPSHOT'
+    id 'io.github.null2264.unimined' version '1.4.2'
 }
 
 group 'me.earth'
@@ -21,6 +21,12 @@ sourceSets {
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://maven.neoforged.net/releases"
+    }
+    maven {
+        url = "https://maven.fabricmc.net/"
+    }
     maven {
         url = "https://files.minecraftforge.net/maven"
     }
@@ -73,7 +79,7 @@ unimined.minecraft(sourceSets.lexforge) {
 
     minecraftForge {
         loader project.lexforge_version
-        mixinConfig 'mc_runtime_test.mixins.json'
+        mixinConfig(['mc_runtime_test.mixins.json', 'mc_runtime_test.forge.mixins.json'])
     }
 
     minecraftRemapper.config {
@@ -194,6 +200,7 @@ afterEvaluate {
             if (System.getenv('DEPLOY_TO_GITHUB_PACKAGES_URL') == null) {
                 maven {
                     name = 'BuildDirMaven'
+                    // this project is in 1_20/1_20_1, so use parent twice
                     url = rootProject.projectDir.toPath().parent.resolve('build').resolve('maven')
                 }
             } else {
