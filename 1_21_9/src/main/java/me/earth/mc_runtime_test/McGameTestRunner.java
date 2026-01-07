@@ -58,6 +58,7 @@ public class McGameTestRunner {
             BlockPos blockPos = new BlockPos(level.random.nextIntBetweenInclusive(-14999992, 14999992), -59, level.random.nextIntBetweenInclusive(-14999992, 14999992));
             level.setRespawnData(new LevelData.RespawnData(GlobalPos.of(player.level().dimension(), blockPos), 0, 0));
             GameTestRunner gameTestRunner = GameTestRunner.Builder.fromBatches(batches, level).newStructureSpawner(new StructureGridSpawner(blockPos, 8, false)).build();
+            gameTestRunner.start();
 
             MultipleTestTracker multipleTestTracker = new MultipleTestTracker(gameTestRunner.getTestInfos());
             multipleTestTracker.addFailureListener(gameTestInfo -> {
@@ -70,9 +71,6 @@ public class McGameTestRunner {
                     System.exit(-1);
                 }
             });
-            LOGGER.info("{} tests are now running at position {}!", multipleTestTracker.getTotalCount(), blockPos.toShortString());
-
-            gameTestRunner.start();
 
             return multipleTestTracker;
         }).get(60, TimeUnit.SECONDS);
