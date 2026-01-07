@@ -85,7 +85,7 @@ unimined.minecraft(sourceSets.neoforge) {
 
     neoForged {
         loader project.neoforge_version
-        mixinConfig 'mc_runtime_test.mixins.json'
+        mixinConfig ['mc_runtime_test.mixins.json', 'mc_runtime_test.neoforge.mixins.json']
     }
 
     minecraftRemapper.config {
