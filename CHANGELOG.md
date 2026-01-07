@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.2.4](https://github.com/null2264/mc-runtime-test/compare/5.2.3...5.2.4) (2026-01-07)
+
+
+### Bug Fixes
+
+* Even more missing import ([023b399](https://github.com/null2264/mc-runtime-test/commit/023b39902b558599272f3a044fde868f87cd05c5))
+* Fix build ([135c8d3](https://github.com/null2264/mc-runtime-test/commit/135c8d3dea0b28ed1c181321f8f50f41126c6c1a))
+* Missing imports ([d7b6ee7](https://github.com/null2264/mc-runtime-test/commit/d7b6ee7e2ed0f19abe93f68c3166962a74faef99))
+* Test is not ticking ([d50c650](https://github.com/null2264/mc-runtime-test/commit/d50c6502a4fe25c5c87fb17a257aa2b71615580a))
+* Tick gametest ([3095c02](https://github.com/null2264/mc-runtime-test/commit/3095c02ddc6404fcbee150281cd6d7f340ea3225))
+* Tick gametest for Forge ([8577481](https://github.com/null2264/mc-runtime-test/commit/85774818970b5648c6bc3ae68ec7096973a222d1))
+
 ## [5.2.3](https://github.com/null2264/mc-runtime-test/compare/5.2.2...5.2.3) (2025-12-17)
 
 
