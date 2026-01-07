@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.2.5](https://github.com/null2264/mc-runtime-test/compare/5.2.4...5.2.5) (2026-01-07)
+
+
+### Bug Fixes
+
+* GameTestHooks mixin supposed to be cancellable ([c5da95e](https://github.com/null2264/mc-runtime-test/commit/c5da95e9e376ce3516a09ccc765e99ab0d30a21b))
+
+
+### Reverts
+
+* "Create tracker before starting the test" ([3177cf4](https://github.com/null2264/mc-runtime-test/commit/3177cf450c5aa6c40169f9ca323a022629563131))
+
 ## [5.2.4](https://github.com/null2264/mc-runtime-test/compare/5.2.3...5.2.4) (2026-01-07)
 
 

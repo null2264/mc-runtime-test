@@ -86,7 +86,7 @@ jobs:
           cp build/libs/&lt;your-mod&gt;.jar run/mods
 
       - name: Run MC test client
-        uses: null2264/mc-runtime-test@5.2.4 <!-- x-release-please-version -->
+        uses: null2264/mc-runtime-test@5.2.5 <!-- x-release-please-version -->
         with:
           mc: 1.21.11
           modloader: fabric
