@@ -1,5 +1,18 @@
 # Changelog
 
+## [5.3.0](https://github.com/null2264/mc-runtime-test/compare/5.2.5...5.3.0) (2026-08-25)
+
+
+### Features
+
+* **mc-versions:** Support 26.2 ([#138](https://github.com/null2264/mc-runtime-test/issues/138)) ([8298cd8](https://github.com/null2264/mc-runtime-test/commit/8298cd8a08768b200b3006c175bc073e34817fad))
+* **mod:** Support 26.1 - 26.1.1 ([#126](https://github.com/null2264/mc-runtime-test/issues/126)) ([a9003a8](https://github.com/null2264/mc-runtime-test/commit/a9003a8d7b5864ae882fcdf89d2acc7afb091916))
+
+
+### Bug Fixes
+
+* **26.2:** Fix permission ([8df2071](https://github.com/null2264/mc-runtime-test/commit/8df2071339ea5aae3c141f98cbac944dc599c557))
+
 ## [5.2.5](https://github.com/null2264/mc-runtime-test/compare/5.2.4...5.2.5) (2026-01-07)
 
 
