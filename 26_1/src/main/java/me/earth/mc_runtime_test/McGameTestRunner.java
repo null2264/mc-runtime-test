@@ -55,7 +55,8 @@ public class McGameTestRunner {
             FailedTestTracker.forgetFailedTests();
 
             Collection<GameTestBatch> batches = GameTestBatchFactory.divideIntoBatches(testFunctions, testDecorator, level);
-            BlockPos blockPos = new BlockPos(level.random.nextIntBetweenInclusive(-14999992, 14999992), -59, level.random.nextIntBetweenInclusive(-14999992, 14999992));
+            net.minecraft.util.RandomSource random = net.minecraft.util.RandomSource.create();
+            BlockPos blockPos = new BlockPos(random.nextIntBetweenInclusive(-14999992, 14999992), -59, random.nextIntBetweenInclusive(-14999992, 14999992));
             level.setRespawnData(new LevelData.RespawnData(GlobalPos.of(player.level().dimension(), blockPos), 0, 0));
             GameTestRunner gameTestRunner = GameTestRunner.Builder.fromBatches(batches, level).newStructureSpawner(new StructureGridSpawner(blockPos, 8, false)).build();
             gameTestRunner.start();
