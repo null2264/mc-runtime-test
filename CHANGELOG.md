@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.3.1](https://github.com/null2264/mc-runtime-test/compare/5.3.0...5.3.1) (2026-08-27)
+
+
+### Bug Fixes
+
+* add missing 26.1.2 support ([acb7168](https://github.com/null2264/mc-runtime-test/commit/acb7168b168c4fd6979f317d5e521af4dd39dbd0))
+* Level.random is now protected ([a9568cd](https://github.com/null2264/mc-runtime-test/commit/a9568cd937505e7d39edc7c8b7c2ec61ad021538))
+* Use my implementation ([acb0924](https://github.com/null2264/mc-runtime-test/commit/acb0924b5694caaea2c1545ead7738b8d5f58401))
+
 ## [5.3.0](https://github.com/null2264/mc-runtime-test/compare/5.2.5...5.3.0) (2026-08-25)
 
 
